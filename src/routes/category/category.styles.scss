@@ -1,0 +1,30 @@
+.category-title{
+    margin-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.product-category-container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Media query for mobile devices */
+  @media only screen and (max-width: 768px) {
+    .product-category-container {
+            justify-content: center;
+     }
+  }
+  
+  /* Media query for larger screens like laptops */
+  @media only screen and (min-width: 769px) {
+  
+    
+    .product-category-container {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+}
+  

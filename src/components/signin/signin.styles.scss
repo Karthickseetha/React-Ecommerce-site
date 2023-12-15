@@ -1,0 +1,151 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .signin-container,
+  .signup-continer {
+    width: 45%;
+    padding: 20px;
+  }
+  
+  .signup-continer {
+    background-color: #f0f0f0;
+  }
+  
+  h2 {
+    font-weight: 700;
+  }
+  h4{
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  input {
+    padding: 5px 10px;
+    width: 100%;
+    margin-top: 5px;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+
+  }
+  input:hover{
+    transform: scale(1.02);
+    background-color: var(--clr--platinum);
+  }
+  
+  
+  .button-group {
+    display: flex;
+    // justify-content: space-around;
+    gap: 2rem;
+    margin-top: 20px;
+  }
+  
+  button {
+    display: block;
+    position: relative;
+    margin-top: 10px;
+    padding: 8px 10px;
+    background-color: var(--clr--princeton-orange);;
+    color: var(--clr--black);
+    border: none;
+    border-radius: 2px;
+    font-size: 1em;
+    transition: background-color 0.3s ease-in-out;
+  }
+  button:hover{
+    cursor: pointer;
+    background-color: var(--clr--dark-orange-web);
+    // color: var(--clr--oxford-blue);
+    transform: scale(1.05);
+    font-weight: 700;
+}
+  
+  .google-signin {
+    display: block;
+    position: relative;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: var(--clr--princeton-orange);;
+    color: var(--clr--black);
+    border: none;
+    border-radius: 2px;
+    font-size: 1em;
+    transition: background-color 0.3s ease-in-out;
+  
+
+  }
+  .google-signin:hover{
+    cursor: pointer;
+    background-color: var(--clr--dark-orange-web);
+    // color: var(--clr--oxford-blue);
+    font-weight: 700;
+  }
+
+
+
+
+  @media screen and (max-width: 640px) {
+    .signin-container,
+    .signup-container {
+      width: 100%; 
+      padding: 15px; 
+    }
+  
+    .container {
+      flex-direction: column; 
+      align-items: center;
+    }
+  
+    .signin-container {
+      order: 1; 
+      margin-top:5rem; 
+    }
+  
+    .signup-container {
+      order: 2; 
+      background-color: #f0f0f0; 
+      margin-top: 20px;
+    }
+  
+    input {
+      font-size: 0.9em; 
+    }
+  
+    .button-group {
+      gap: 1.5rem; 
+    }
+  }
+  
+  /* Adjustments for other screen sizes can follow */
+  
+  @media screen and (min-width: 781px) and (max-width: 1080px) {
+    .signin-container,
+    .signup-container {
+      width: 50%; 
+      padding: 25px;
+    }
+  
+    input {
+      font-size: 1.1em; 
+    
+    }
+  
+    .button-group {
+      gap: 2.5rem; 
+     }
+  }
+  

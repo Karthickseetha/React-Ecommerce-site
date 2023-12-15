@@ -1,0 +1,151 @@
+
+  
+// home styles 
+section{
+    margin-top: 50px;
+  }
+  .flex-container {
+      display: flex;
+      justify-content: space-between; 
+      overflow-x: auto; 
+      gap: 20px;
+      padding: 20px; 
+      // overflow: hidden;
+  
+  
+      .item {
+          flex: 0 0 auto; 
+          position: relative;
+          overflow: hidden;
+          transition: transform 0.3s ease-in-out; 
+        }
+        
+        .item:hover {
+          transform: scale(1.05);
+          cursor: pointer;
+        }
+        
+        .item img {
+          width: 30rem;
+          height: auto;
+          transition: transform 0.3s ease-in-out; 
+        }
+        
+        .item:hover img {
+          cursor: pointer;
+          transform: scale(1.1); 
+        }
+        
+        .item h2 {
+          display: inline-block;
+          position: relative;
+          margin-top: 10px;
+          right: 29.8rem;
+          bottom: 0.8rem;
+          padding: 8px 16px;
+          background-color: var(--clr--princeton-orange);
+          color: var(--clr--black);
+          border: none;
+          border-radius: 4px;
+          font-size: 1em;
+          transition: background-color 0.3s ease-in-out; 
+        }
+        .item h2:hover{
+          cursor: pointer;
+          background-color: var(--clr--dark-orange-web);
+          ;
+        }
+        
+        .item button {
+          display: block;
+          position: relative;
+          left: 23.3rem;
+          bottom: 3.5rem;
+          margin-top: 10px;
+          padding: 8px 16px;
+          background-color: var(--clr--princeton-orange);
+          color: var(--clr--black);
+          border: none;
+          border-radius: 4px;
+          font-size: 1em;
+          transition: background-color 0.3s ease-in-out; 
+      }
+        
+        .item button:hover {
+          cursor: pointer;
+          background-color: var(--clr--dark-orange-web);
+        }
+        
+  
+  
+          // Media queries for different screen sizes
+    @media screen and (max-width: 450px) {
+      flex-direction: column; /* Stack items in a column */
+      align-items: center;
+  
+      .item {
+        width: 100%; /* Set width to fill the container */
+        margin-bottom: 20px;
+  
+        h2,
+        button {
+          right: 0;
+          left: 0;
+          text-align: center;
+        }
+      }
+    }
+    @media screen and (min-width: 451px) and (max-width: 640px) {
+      .flex-container {
+        .item {
+          img {
+            width: 80%; /* Adjust image width */
+          }
+    
+          h2,
+          button {
+            right: 0;
+            left: 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+    
+    @media screen and (min-width: 641px) and (max-width: 780px) {
+      .flex-container {
+        .item {
+          img {
+            width: 70%; /* Adjust image width */
+          }
+    
+          h2,
+          button {
+            right: 0;
+            left: 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+    
+    @media screen and (min-width: 781px) and (max-width: 1080px) {
+      .flex-container {
+        .item {
+          img {
+            width: 60%; /* Adjust image width */
+          }
+    
+          h2,
+          button {
+            right: 0;
+            left: 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+  
+    }
+    
+  
