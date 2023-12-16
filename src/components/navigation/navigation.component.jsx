@@ -26,8 +26,10 @@ const Navbar = () => {
       <>
         <nav >
         <div className="logo-container">
+        <Link  to='/'>
           <img src={Logo}
            alt="logo" />
+           </Link>
         </div>
         <ul>
           <li className='nav-item'> 
