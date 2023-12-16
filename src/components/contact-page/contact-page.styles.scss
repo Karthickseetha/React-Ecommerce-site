@@ -1,0 +1,99 @@
+.hero {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+
+
+  form {
+    margin-top: 40px; 
+
+    // margin-left: 5rem;
+    width: 90%;
+    max-width: 600px;
+
+  .input-group {
+    margin-bottom: 30px;
+    position: relative;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    outline: 0;
+    border: 1px solid var(--clr--princeton-orange);
+    color: var(--clr--black);
+    background: transparent;
+    font-size: 15px;
+  }
+  
+  label {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    color: var(--clr--black);
+    cursor: text;
+    transition: 0.2s;
+  }
+  
+
+      button {
+        width: 100%;
+        padding: 10px;
+        font-size: 18px;
+        background-color: var(--clr--princeton-orange);
+        color: var(--clr--black);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: var(--clr--dark-orange-web);
+        }
+      }
+  
+  input:focus ~ label,
+  input:valid ~ label,
+  textarea:focus ~ label,
+  textarea:valid ~ label {
+    top: -35px;
+    font-size: 14px;
+  }
+  
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .row .input-group {
+    flex-basis: 48%;
+  }
+}
+
+}
+  
+    @media (max-width: 600px) {
+      .hero {
+        form {
+          label {
+            font-size: 14px;
+          }
+  
+          input,
+          textarea {
+            font-size: 14px;
+          }
+        }
+  
+        button {
+          font-size: 16px;
+        }
+      }
+    }
+  
+  
+    

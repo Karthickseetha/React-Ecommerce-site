@@ -14,6 +14,8 @@ const CategoriesPreview = () => {
             key={title}
             title={title}
             products={products}
+
+            
             />
 
         );

@@ -14,4 +14,9 @@ import CheckoutItem from "./checkout-item/checkout-item.component";
 
 import CategoryPreview from "./category-preview/category-preview.component";
 
-export {Navbar,SignIn,SignUp,ProductCard,CartIcon,CartDropDown,CheckoutItem,CategoryPreview};
+import ContactPage from "./contact-page/contact-page.component";
+
+import Assistant from "./Assistant/assistant.component";
+
+
+export {Navbar,SignIn,SignUp,ProductCard,CartIcon,CartDropDown,CheckoutItem,CategoryPreview,ContactPage,Assistant};

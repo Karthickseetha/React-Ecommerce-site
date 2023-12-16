@@ -1,0 +1,46 @@
+
+.assistant {
+    position: fixed;
+    bottom: 20px;
+    right: 60px;
+    background-color: var(--clr--princeton-orange);
+    border-radius: 70%;
+    padding: 10px;
+    box-shadow: 0px 2px 4px var(--clr--black);
+  
+    .assistant-icons {
+      display: flex;
+      flex-direction: column;
+  
+      .icon {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+  
+        &:hover {
+          background-color: #f0f0f0;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .assistant{
+      position: fixed;
+      bottom: 5px;
+      right: 10px;
+    }
+    
+    }
+  
