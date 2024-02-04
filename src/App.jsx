@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 
-import { Root,ErrorPage,Home,Shop,Checkout,Contact,Auth} from "./routes";
+import { Root,ErrorPage,Home,Shop,Checkout,Auth} from "./routes";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,11 +24,6 @@ const router = createBrowserRouter([
     {
       path: "/cart",
       element: <Checkout/>,
-    },
-    {
-      path: "/contact",
-      element: <Contact/>,
-      
     },
     {
       path: "/auth",

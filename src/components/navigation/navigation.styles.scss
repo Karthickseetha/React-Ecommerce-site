@@ -37,10 +37,20 @@ nav{
 
 
     }
+    .user-display{
+      margin-top: 2rem;
+    }
+    .user-display-name{
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
     .nav-signout{
       font-size: 1.5rem;
       margin-top: 2rem;
       font-weight: 700;
+      margin-left: 2rem;
       cursor: pointer;
 
     }

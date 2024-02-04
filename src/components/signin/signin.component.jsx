@@ -1,50 +1,40 @@
+// SignIn.js
+import React, { useState } from 'react';
+import { signInWithGooglePopup, createUserDocumentFromAuth, signInAuthUserEmailAndPassword } from '../../utils/firebase/firebase';
+import { toast, Toaster } from 'react-hot-toast';
 import './signin.styles.scss';
 
-import {
-    signInWithGooglePopup,
-    createUserDocumentFromAuth,
-  signInAuthUserEmailAndPassword 
-} from '../../utils/firebase/firebase'
-import { useState } from 'react';
-const defaultFormFields={
-    email: '',
-    password: ''
-}
+const defaultFormFields = {
+  email: '',
+  password: ''
+};
 
 const SignIn = () => {
-    
-    const [formFields,setFormFields]=useState
-    (defaultFormFields); 
+  const [formFields, setFormFields] = useState(defaultFormFields);
 
-    const {email,password} = formFields;
+  const { email, password } = formFields;
 
-    
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    if (  email && password ) {
-    
-        try{
-            const {user} = await signInAuthUserEmailAndPassword(
-                email,
-                password,
-            );
-            if(user){
-              alert('Sign In successfully');
-            }
-            // console.log(response);
-        } catch(err){
-            if(err.code === `auth/invalid-credential`){
-          alert(`No user associted with this email`)
+    if (email && password) {
+      try {
+        const { user } = await signInAuthUserEmailAndPassword(email, password);
+        if (user) {
+          toast.success('Signed In Successfully');
+          // Add any additional logic after successful sign in if needed
         }
-        else if (err.code == `auth/wrong-password`){
-          alert(`Incorrect Password`)
+      } catch (err) {
+        if (err.code === `auth/invalid-credential`) {
+          toast.error(`No user associated with this email`);
+        } else if (err.code === `auth/wrong-password`) {
+          toast.error(`Incorrect Password`);
         }
-            console.log(`Error Occured while sign In`,err.code)
-        }
+        console.log(`Error Occurred while signing In`, err.code);
+      }
       setFormFields(defaultFormFields);
     } else {
-      alert('All fields are mandatory');
+      toast.error('All fields are mandatory');
       return;
     }
   };
@@ -53,31 +43,24 @@ const SignIn = () => {
     const key = e.target.name;
     const value = e.target.value;
 
-    setFormFields({ ...formFields, [key]: value });
+    setFormFields((prevFields) => ({ ...prevFields, [key]: value }));
   };
 
+  const logGoogleUser = async () => {
+    const { user } = await signInWithGooglePopup();
+    const userDocRef = await createUserDocumentFromAuth(user);
+    toast.success('Signed In Successfully with Google');
+    // Add any additional logic after successful Google sign in if needed
+  };
 
-  const logGoogleUser =async()=>{
-    const {user} = await signInWithGooglePopup();
-   
-   
-    const userDocRef =await createUserDocumentFromAuth(user);
-    
-    // console.log(user);
-}
-    return ( 
-        <>
-    
-    <div className="signin-container">
-     
-      <h2>Sign In</h2>
-        <h2>If you have an account,Sign In here.
+  return (
+    <>
+      <div className="signin-container">
+        <h2>Sign In</h2>
+        <h2>If you have an account, Sign In here.</h2>
 
-        </h2>
-        
         <form onSubmit={submitHandler}>
-         
-        <div className="input-group">
+          <div className="input-group">
             <label htmlFor="email">Email</label>
             <input
               type="email"
@@ -101,23 +84,18 @@ const SignIn = () => {
               placeholder="Enter your password"
             />
           </div>
-            <div className="button-group">
-                 <button type='submit'>
-                    Sign In
-                 </button>
-                 <button
-                 type='button'
-        onClick={logGoogleUser}>
-            SignIn with Google
-        </button>
-
-            </div>
+          <div className="button-group">
+            <button type="submit">Sign In</button>
+            <button type="button" onClick={logGoogleUser}>
+              SignIn with Google
+            </button>
+          </div>
         </form>
-    </div>
 
+        <Toaster />
+      </div>
+    </>
+  );
+};
 
-        </>
-     );
-}
- 
 export default SignIn;
